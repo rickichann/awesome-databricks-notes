@@ -2,7 +2,7 @@
 CREATE OR REPLACE TEMP VIEW src_incremental_trans AS
 SELECT
   *
-FROM `poc-kg-data_catalog`.bookstore.trans
+FROM `poc-kg-data_catalog`.sopipuds.trans
 WHERE updated_at >= concat(cast(date(to_timestamp(from_utc_timestamp(current_timestamp(), 'Asia/Jakarta'))- INTERVAL 2 DAYS) as string),' 00:00:00');
 
 -- 2. Count new rows
